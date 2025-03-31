@@ -1,0 +1,25 @@
+# Dependencias de Node.js
+node_modules/
+package-lock.json
+
+# Dependencias de PHP (Composer)
+vendor/
+composer.lock
+
+# Archivos del entorno
+.env
+.env.local
+.env.*.local
+
+# Caché y archivos temporales
+*.log
+*.cache
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Archivos del sistema
+.vscode/
+.idea/
+*.bak
+*.swp
