@@ -14,6 +14,7 @@ class ComputerController extends Controller
     public function index(Request $request)
     {
         return Computer::where("computer_brand", "ilike", "%$request->search%")
+        ->with("category")
         ->orderBy("id", "asc")
         ->get();
     }
@@ -23,10 +24,10 @@ class ComputerController extends Controller
      */
     public function store(ComputerRequest $request)
     {
-        $event = Computer::create($request->all());
+        $computer = Computer::create($request->all());
         return response()->json([
             "status" => true,
-            "event" => $event
+            "computer" => $computer
         ]);
     }
 
@@ -35,7 +36,8 @@ class ComputerController extends Controller
      */
     public function show(Computer $computer)
     {
-        return response()->json(["status" => true, "" => $computer]);
+        $computer->load("category");
+        return response()->json(["status" => true, "computer" => $computer]);
     }
 
     /**

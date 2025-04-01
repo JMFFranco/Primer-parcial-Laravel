@@ -22,6 +22,8 @@ class ComputerFactory extends Factory
             "computer_price" => fake()->randomFloat(10000, 1000000),
             "computer_ram_size" => fake()->numberBetween(2, 128),
             "computer_is_laptop" => fake()->boolean(),
+            "computer_barcode" => fake()->unique()->uuid(),
+            "fk_category_computer" => fake()->numberBetween(2, 10),
         ];
     }
 }

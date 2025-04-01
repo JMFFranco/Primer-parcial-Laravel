@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ComputerRequest extends FormRequest
+class CategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,13 +22,10 @@ class ComputerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "computer_brand" => ["required", "string", "max:256"],
-            "computer_model" => ["required", "string","max:256"],
-            "computer_price" => ["required", "decimal:3"],
-            "computer_ram_size" => ["integer"],
-            "computer_is_laptop" => ["boolean"],
-            "computer_barcode" => ["string", "max:256"],
-            "fk_category_computer" => ["exists:categories,id"],
+            "category_name" => ["required", "string","max:256"],
+            "category_number" => ["integer"],
+            "category_price" => ["decimal:3"],
+            "category_state" => ["boolean"],
         ];
     }
 }

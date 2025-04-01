@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComputerController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -9,4 +10,6 @@ use Illuminate\Support\Facades\Route;
 })->middleware('auth:sanctum'); */
 
 Route::apiResource("computers", ComputerController::class);
+Route::apiResource("categories", CategoryController::class);
+
 
